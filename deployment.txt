@@ -1,0 +1,38 @@
+Frontend URL: [TO BE FILLED AFTER DEPLOYMENT]
+Backend API URL: [TO BE FILLED AFTER DEPLOYMENT]
+Database: MongoDB Atlas (connection via MONGO_URI environment variable)
+
+---
+
+Deployment Instructions:
+
+FRONTEND (Vercel/Netlify):
+1. Push the `frontend/` folder to a Git repo (or use Vercel CLI).
+2. In Vercel, set the Root Directory to `frontend`.
+3. Build Command: npm run build
+4. Output Directory: dist
+5. Environment Variable: VITE_API_URL = https://your-backend-api.onrender.com
+6. The vercel.json handles SPA routing rewrites.
+
+BACKEND (Render/Railway/Fly):
+1. Push the `backend/` folder to a Git repo.
+2. In Render, create a Web Service pointing to `backend`.
+3. Build Command: npm install
+4. Start Command: npm start (runs `node server.js`)
+5. Environment Variables (set in Render dashboard):
+   - PORT=5000
+   - MONGO_URI=mongodb+srv://...
+   - JWT_SECRET=<your secret>
+   - EMAIL_USER=<gmail address>
+   - EMAIL_PASS=<gmail app password>
+   - EMAIL_FROM=Felicity Events <email>
+   - FRONTEND_URL=https://your-frontend.vercel.app
+
+DATABASE (MongoDB Atlas):
+1. Create a free cluster on mongodb.com.
+2. Create a database user with read/write access.
+3. Whitelist 0.0.0.0/0 (or specific IPs) in Network Access.
+4. Copy the connection string and set as MONGO_URI.
+
+Admin Login:
+- Seed an admin account using `node seed.js` on the backend, or create one manually in MongoDB Atlas.

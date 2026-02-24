@@ -21,9 +21,9 @@ This guide walks you through deploying the full MERN stack project to the cloud 
 4. In **Network Access** → click **"Add IP Address"** → choose **"Allow Access from Anywhere"** (`0.0.0.0/0`)
    - This is required because Render's IP changes — Atlas needs to accept connections from any IP
 5. Go to **Database** → click **"Connect"** → choose **"Drivers"** → copy the connection string
-   - It will look like: `mongodb+srv://felicity:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority`
-   - Replace `<password>` with your actual password
-   - Add database name after `.net/`: `mongodb+srv://felicity:Felicity2026!@cluster0.xxxxx.mongodb.net/felicity?retryWrites=true&w=majority`
+   - Your Atlas cluster is: `felicity.46ztonu.mongodb.net`
+   - Your full URI: `mongodb+srv://shoaib:YOUR_DB_PASSWORD@felicity.46ztonu.mongodb.net/felicity?retryWrites=true&w=majority&appName=Felicity`
+   - Replace `YOUR_DB_PASSWORD` with the password you set for the `shoaib` database user
 6. **Save this URI** — you'll need it for the backend deployment
 
 ---
@@ -49,7 +49,7 @@ This guide walks you through deploying the full MERN stack project to the cloud 
 | Key | Value |
 |-----|-------|
 | `PORT` | `5000` |
-| `MONGO_URI` | `mongodb+srv://felicity:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/felicity?retryWrites=true&w=majority` |
+| `MONGO_URI` | `mongodb+srv://shoaib:YOUR_DB_PASSWORD@felicity.46ztonu.mongodb.net/felicity?retryWrites=true&w=majority&appName=Felicity` |
 | `JWT_SECRET` | `felicity_secret_key_2026` |
 | `EMAIL_USER` | `ashoaib863@gmail.com` |
 | `EMAIL_PASS` | `ivre vbfm nnbu pkwq` |
